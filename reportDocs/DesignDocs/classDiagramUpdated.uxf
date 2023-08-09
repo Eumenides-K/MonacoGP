@@ -1,0 +1,323 @@
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><element><id>UMLClass</id><coordinates><x>400</x><y>296</y><w>168</w><h>56</h></coordinates><panel_attributes>CurrentScreen
+--
+
+--
+/+display(): void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>472</x><y>344</y><w>24</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>248</x><y>384</y><w>504</w><h>32</h></coordinates><panel_attributes></panel_attributes><additional_attributes>610;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>248</x><y>392</y><w>24</w><h>72</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>176</x><y>448</y><w>168</w><h>112</h></coordinates><panel_attributes>StartScreen
+--
+-singleX, singleY, singleW, sinlgeH,
+ twoX, twoY, twoW, twoH: int
+-singleOver, towOver: boolean
+-buttonWidth, buttonHeight: int
+--
++display():void
+-overButton(x, y, width, height: int): 
+boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>472</x><y>392</y><w>24</w><h>72</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>400</x><y>448</y><w>168</w><h>64</h></coordinates><panel_attributes>CountDown
+--
+
+--
++display():void
+-countDown(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>728</x><y>392</y><w>24</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;30</additional_attributes></element><element><id>UMLClass</id><coordinates><x>656</x><y>416</y><w>200</w><h>216</h></coordinates><panel_attributes>Difficulty
+--
+-easyX, easyY, easyW, easyH, mediumX, 
+mediumY, mediumW, mediumH, hardX, 
+hardY, hardW, hardH, insanityX, 
+insanityY, insanityW, insanityH, 
+backButtonX, backButtonY, backButtonW,
+ backButonH: int
+-easyOver, mediumOver, hardOver,
+ backOver, insanityOver: boolean
+--
++displayButton(): void
+-displayButton(buttonOver: boolean, 
+buttonImg: PImage, buttonX: int, 
+buttonY: int): void
+-changeDiffOnClick(): void
+-KEYPRESSED(KEY: char): boolean
++overButton(x: int, y: int, bWidth: int, 
+bHeight: int): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>472</x><y>176</y><w>24</w><h>136</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>248</x><y>224</y><w>472</w><h>32</h></coordinates><panel_attributes></panel_attributes><additional_attributes>570;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>248</x><y>192</y><w>24</w><h>64</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>176</x><y>0</y><w>168</w><h>200</h></coordinates><panel_attributes>GameOver
+--
+-restartButtonX, restartButtonY,
+ restartButtonW, restartButtonH,
+ menuButtonX, menuButtonY, 
+menuButtonW, menuButtonH: int
+-menuOver, restartOver: boolean
+rowInfo: ArrayList&lt;String&gt; 
+-buttonWidth, buttonHeight: int
+--
++display(): void
++displayOnePlayer(): void
++displayTwoPlayers(): void
++newPositions(): void
++drawTable(): void
+-overButton(x: int, y: int, bWidth: int,
+ bHeight: int): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>48</y><w>168</w><h>136</h></coordinates><panel_attributes>UserNameCarChoice
+--
+-exntyX, entryY: int
+-backOver: boolean
+-backButtonX, backButtonY, 
+backButtonW, backButtonH:  int
+--
++display(): void
+-displayOnePlayer(): void
+-displayTwoPlayer(): void
+-KEYPRESSED(key: char): boolean
+-BACKSPACE(): void
+-addText(text: char): void
+-isUpper(key: char): boolean
+-isLower(key: char): boolean
+-isNumber(key:char): boolean
++overButton(x, y, bWidth, bHeight: boolean): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>176</y><w>24</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>624</x><y>96</y><w>168</w><h>88</h></coordinates><panel_attributes>GamePlay
+--
+
+--
++display(): void
+-gamePlay(): void
++displayLives(player: Player, number: int): void
+-KEYPRESSED(KE: char): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>24</x><y>208</y><w>216</w><h>120</h></coordinates><panel_attributes>PauseGame
+--
+-exitButtonX, exitButtonY, 
+backButtonW, backButtonH, 
+buttonWidth, buttonHeight: int
+-exitOver: boolean
+--
++display(): void
+-KEYPRESSED(KEY: char): boolean
+-overButton(x, y, width, height: int):
+ boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>400</x><y>568</y><w>224</w><h>224</h></coordinates><panel_attributes>Objects
+--
+/-X: float/
+/-Y: float/
+/-heightX: float/
+/-widthY: float/
+/-direction: boolean /
+--
+/+setPositionX(x: float): void/
+/+setPositionY(y: float): void/
+/+getPositionY(): void/
+/+getPositionY(): void/
+/+getWidth(): float/
+/+getHeight():float/
+/+disappear(): void/
+/+crashDetector(player: objects, crashee: objects):/
+/ boolean/
+/+moveObject(): void/
+/+showExplosionAnimation(x: float, y: float): void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>312</x><y>592</y><w>104</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>152</x><y>576</y><w>168</w><h>48</h></coordinates><panel_attributes>Tank
+--
+
+--
++moveObject(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>312</x><y>664</y><w>104</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>152</x><y>648</y><w>168</w><h>48</h></coordinates><panel_attributes>Landmine
+--
+
+--
++moveObject(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>784</y><w>24</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>400</x><y>824</y><w>168</w><h>152</h></coordinates><panel_attributes>Racer
+--
+-speed: float
+-heightX: float
+-widthY: float
+--
++getSize(): void
++getSpeed(): void
++setSpeed(speed: float): void
++moveUp(): void
++moveDown(): void
++moveLeft(): void
++moveRight(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>328</x><y>888</y><w>88</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>168</x><y>864</y><w>168</w><h>64</h></coordinates><panel_attributes>Bot
+--
+
+--
++randomisePosition(): void
++moveObject(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>880</y><w>112</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>656</x><y>792</y><w>208</w><h>248</h></coordinates><panel_attributes>Player
+--
+-name: String
+-lives: int
+--
++checkPlayerGaps(onePlayer: Player,
+ twoPlayer: player):boolean
++getLives(): int
++loseLife(): void
++resetLives(): void
++setPlayerName(text: String): void
++getPlayerName(): String
++moveUp(): void
++moveDown(): void
++moveLeft(): void
++moveRight(): void
++playerKeyStateHandler(number: int): void
+-arrowKeys(): void
+-wasdKeys(): void
++crashDetector(otherPlayer Player,
+ thisPlayer: Player): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1256</x><y>208</y><w>168</w><h>104</h></coordinates><panel_attributes>RealTimeTimer
+--
+-startTime: long
+-stopTimer: boolean
+-runtime: int
+--
++getRunTime(): void
++stopTimer(): void
++resetTimer(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1256</x><y>344</y><w>168</w><h>112</h></coordinates><panel_attributes>Track
+--
+speed: int
+trackPosition: int
+PImage trackImage
+--
++setSpeed(playerSpeed: int): void
++getSpeed(): int
+moveTrack(): void
+resetTrack(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>936</x><y>48</y><w>232</w><h>1040</h></coordinates><panel_attributes>Model
+import: java.util.concurrent.Executors
+import java.util.concurrent.ScheduledExecutorService
+import ddf.minim*
+--
+-difficultyLevel: int
+-playerMovement: int
+-score: int
+-gameState: int
+-landmine1, landmine2: Objects
+-landmines: ArrayList&lt;Objects&gt;
+-bot1, bot2, bot3: bot
+-bots: ArrayList&lt;Bots&gt;
+-trackbase: Track
+-realTimeTimer: RealTimeTimer
+-countDown: RealTimeTimer
+-tanks: ArrayList&lt;Objects&gt;
+-playerNames: ArrayList&lt;String&gt;
+-currentScreen: CurrentScreen
+-FileName: String
+-results: Table
+-rowInfo: ArrayList&lt;String&gt;
+-imgs: PImage[ ]
+-explosion: PImage[ ]
+-exploding: boolean
+-explosionIndex: int
+-players: ArrayList&lt;Player&gt;
+-twoPlayer: boolean
+-enterCount: int
+-activePlayers: int
+-keyboardType: boolean
+--
++setTwoPlayer(multi: boolean): void
++getTwoPlayer(): boolean
++getPlayer(): ArrayList&lt;Player&gt;
++removeSecondCar(): void
++makeSecondCar(): void
++getNames(): ArrayList&lt;String&gt;
++resetName(): void
++setNames(text: char, i: int): void
++removeChar(i: int): void
++resetLives() void
++resetPlayersPosition(): void
++removePlayer(): void
++shiftPlayers(): void
++recreatePlayer(): void
++getKeyboard(): boolean
++changeKeyboard(): void
++setTrack(newTrack: Track): void
++getTrack(): Track
++makeBots(): ArrayList&lt;bot&gt;
++getBots(): ArrayList&lt;bot&gt;
++setBotPositions(): void
++checkBotGaps(bot: bot): boolean
++makeLandmines(): ArrayList&lt;objects&gt;
++getLandmines(): ArrayList&lt;objects&gt;
++removeLandmines(): void
++makeTanks(): ArrayList&lt;objects&gt;
++getTanks(): ArrayList&lt;objects&gt;
++removeTanks(): void
++setEntryScreen(screen: CurrentScreen): void
++getEntryScreen(): CurrentScreen
++wipeEntryScreen(): void
++setTable(results1: Table): void
++getTable(): Table
++getFileName(): String
++setRowInfo(info: String): void
++getRowInfo(): ArrayList&lt;String&gt;
++setDifficulty(level: int): void
++getDifficulty(): int
++getGameState(): int
++setGameState(newGameState: int): void
++resetScore(): void
++stopTimer(): void
++getScore(): int
++setScore(): void
++getTimer(): RealTimeTimer
++getCountDownTimer(): int
++resetCountdownTimer(): void
++stopCountdown(): void
++exploAnimation(): void
++setExploding(): void
++resetExploding(): void
++getExploding(): boolean
++getExplodingIndex(): int
++setExplodingIndex(i: int): void
++reset(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>320</y><w>392</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>470;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1160</x><y>256</y><w>112</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=2</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1160</x><y>408</y><w>112</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>616</x><y>632</y><w>336</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes><additional_attributes>400;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1304</x><y>504</y><w>184</w><h>568</h></coordinates><panel_attributes>monaco
+--
+import: processing.sound
+import: java.nio.file.Files
+import: java.util.concurrent.TimeUnit
+--
+minim: Minim
+backgroundAudio: AudioPlayer
+explodeAudio: AudioPlayer
+gameOverAudio: AudioPlayer
+buttonClickAudio: AudioPlayer
+engineAudio: AudioPlayer
+file1: SoundFIle
+audioName: String
+audioPath: String
+unicodeFont: PFont
+racingFont: PFont
+game: model
+keyStates[]: boolean
+--
+setup(): void
+keyPressed(): void
+singlePlayerPresses(keyVal: int): void
+twoPlayerPresses(keyVal: int): void
+arrowKeys(keyVal: int): void
+wasdKeys(keyVal: int): void
+keyReleased(): void
+singlePlayerReleased(keyVal: int): void
+twoPlayerReleased(keyVal:int): void
+-addToTable(): void
+-createFileIfNotExists(): void
+-loadDataFromTable(): void
+-loadImages(): void
++loadExpl(): void
++loadBot():void
++loadTrack(): void
++loadObjects(): void
++loadScreens(): void
++loadText(): void
+draw(): void
++gameOver(): void
++startScreen():void
++countDown(): void
++gamePlay(): void
++difficulty(): void
++UserNameCarChoice():void
++pauseScreen(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1160</x><y>848</y><w>160</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1</panel_attributes><additional_attributes>180;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>24</x><y>336</y><w>216</w><h>88</h></coordinates><panel_attributes>LeaderBoard
+--
+- backButtonX, backButtonY, 
+backButtonW, backButtonH: int 
+- backOver: boolean
+--
+/+drawTable(): void/
+/+overButton(x, y, bWidth, bHeight: boolean): void/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>304</x><y>320</y><w>112</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>120;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>304</x><y>288</y><w>24</w><h>88</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>232</x><y>344</y><w>96</w><h>32</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element><element><id>Relation</id><coordinates><x>232</x><y>280</y><w>96</w><h>32</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element></diagram>
